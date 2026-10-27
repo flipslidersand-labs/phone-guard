@@ -243,3 +243,8 @@ GitHub Actions は `flipslidersand-labs/qa-workflows` の reusable workflow を�
 ### ライセンス
 
 MIT
+
+
+## 設計判断 / Architecture decisions
+
+[ADR 一覧](docs/adr/README.md) — 設計判断、根拠資料、未決定事項。
