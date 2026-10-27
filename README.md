@@ -109,6 +109,17 @@ psql -U postgres -f db/schema.sql
 | GET | `/api/whitelist` | Retrieve whitelist |
 | POST | `/api/whitelist` | Add to whitelist |
 
+### CI
+
+GitHub Actions calls reusable workflows from `flipslidersand-labs/qa-workflows`:
+
+| Workflow | Purpose |
+|---|---|
+| `go-test.yml` | Go tests for `backend/` (`working-directory: backend`) |
+| `gitleaks.yml` | Secrets scan (gitleaks) |
+
+**Required setting:** the Actions variable `GATE_RUNNER` must be set. Both workflows read it as the runner (`runs-on`), with no default for public repos. It is set at the organization level; if you fork this repository, set `GATE_RUNNER` yourself (Settings → Secrets and variables → Actions → Variables), e.g. `ubuntu-latest`. Without it the jobs stay queued.
+
 ### License
 
 MIT
@@ -217,6 +228,17 @@ psql -U postgres -f db/schema.sql
 | POST | `/api/calls` | 着信ログ記録 |
 | GET | `/api/whitelist` | ホワイトリスト取得 |
 | POST | `/api/whitelist` | ホワイトリスト追加 |
+
+### CI
+
+GitHub Actions は `flipslidersand-labs/qa-workflows` の reusable workflow を呼び出します。
+
+| Workflow | 内容 |
+|---|---|
+| `go-test.yml` | `backend/` の Go テスト（`working-directory: backend`） |
+| `gitleaks.yml` | シークレット走査（gitleaks） |
+
+**必須設定:** Actions 変数 `GATE_RUNNER` が必要です。どちらの workflow も runner（`runs-on`）としてこの変数を読み、公開リポでは既定値がありません。org 設定で定義済みです。fork する場合は各自で `GATE_RUNNER`（Settings → Secrets and variables → Actions → Variables）を設定してください（例: `ubuntu-latest`）。未設定だとジョブは queued のまま止まります。
 
 ### ライセンス
 
