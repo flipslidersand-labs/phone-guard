@@ -4,6 +4,8 @@
 ![Platform](https://img.shields.io/badge/platform-ESP32%20%7C%20GCP-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+Release type: `service`
+
 ---
 
 ## English
